@@ -3,24 +3,47 @@
     <title>Log In Form</title>
     <link rel="stylesheet"  href="style.css">
 </head>
-
+<body>
     <div class="loginbox">
     <img src="avvtar.png" class="avtar">
     <h1>Login Here</h1>
 
-    <form>
+    <form name="login" action="" onsubmit="return validation()" method="POST"> 
     <p>Username</p>
-    <input type="text" placeholder="Enter Uername">
+    <input type="text" id="user" placeholder="Enter Uername">
 
     <p>Password</p>
-    <input type="password" name="" placeholder="Enter Password">
+    <input type="password" id="password" name="" placeholder="Enter Password">
 
     <input type="submit" name="" value="Log In">
     <a href="#">Forget password?</a><br/>
     <a href="#">Create new</a>
     </form>
     </div>
-<body>
+
+        <script>
+            function validation()
+            {
+                    var id=document.login.user.value;
+                    var ps=document.login.password.value;
+
+                    if(id.length=="" && ps.length==""){
+                        alert("UserName and Password fields are empty");
+                        return false;
+                    }
+                    else 
+                    {
+                        if(id.length==""){
+                            alert("Please enter your userName!!");
+                            return false;
+                        }
+
+                        if(ps.length==""){
+                            alert("Please enter password!!")
+                        }
+                    }
+            }
+        </script>
     
 </body>
 </html>
